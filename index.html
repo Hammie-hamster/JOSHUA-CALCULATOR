@@ -1,0 +1,198 @@
+<html>
+  <head>
+    <title>JOSHUA'S CALCULATOR</title>
+  </head>
+  <body>
+    
+    <h1>JOSHUA'S CALCULATOR</h1>
+    <span>
+      <button onclick = "left_perentheses()" class = "operator">(</button>
+      <button onclick = "right_perentheses()" class = "operator">)</button>
+      <button onclick = "percent()" class = "operator">%</button>
+      <button onclick = "Clear()" class = "operator" id = "clear">AC</button>
+    </span>
+    <br><br>
+    <span>
+      <button onclick = "value7()" class = "number">7</button>
+      <button onclick = "value8()" class = "number">8</button>
+      <button onclick = "value9()" class = "number">9</button>
+      <button onclick = "divide()" class = "operator">÷</button>
+    </span>
+    <br><br>
+    <span>
+      <button onclick = "value4()" class = "number">4</button>
+      <button onclick = "value5()" class = "number">5</button>
+      <button onclick = "value6()" class = "number">6</button>
+      <button onclick = "multiply()" class = "operator">x</button>
+    </span>
+    <br><br>
+    <span>
+      <button onclick = "value1()" class = "number">1</button>
+      <button onclick = "value2()" class = "number">2</button>
+      <button onclick = "value3()" class = "number">3</button>
+      <button onclick = "subtract()" class = "operator">-</button>
+    </span>
+    <br><br>
+    <span>
+      <button onclick = "value0()" class = "number">0</button>
+      <button onclick = "dot()" class = "number">.</button>
+      <button onclick = "equal()" class = "operator2">=</button>
+      <button onclick = "add()" class = "operator">+</button>
+      </span>
+      <br><br>
+      <label id = "output"></label>
+    
+  </body>
+  <style>
+    button {
+  width : 60px;
+  border : 0px solid;
+  height : 30px;
+  border-radius : 5px;
+}
+
+button.hover {
+    background-color: aliceblue;
+}
+
+.operator2 {
+  background-color : rgb(0, 115, 255, 1);
+  color : white;
+}
+
+body {
+  text-align : center;
+}
+
+.operator {
+  background-color : lightgrey;
+}
+
+label {
+  background : lightgrey;
+  color : RGB(100, 100, 0);
+  border-radius : 10px;
+}
+  </style>
+  <script>
+    var equation = [""];
+  
+  function value0() {
+    equation = equation.concat("0");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function value1() {
+    equation = equation.concat("1");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function value2() {
+    equation = equation.concat("2");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function value3() {
+    equation = equation.concat("3");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function value4() {
+    equation = equation.concat("4");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function value5() {
+    equation = equation.concat("5");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function value6() {
+    equation = equation.concat("6");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function value7() {
+    equation = equation.concat("7");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function value8() {
+    equation = equation.concat("8");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+
+  function value9() {
+    equation = equation.concat("9");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function divide() {
+    equation = equation.concat(" / ");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  function multiply() {
+    equation = equation.concat(" * ");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function add() {
+    equation = equation.concat(" + ");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function subtract() {
+    equation = equation.concat(" - ");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+
+  function dot() {
+    equation = equation.concat(".");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+  
+  function equal() {
+    document.getElementById("output").innerHTML = equation + " = " + eval(equation);
+    document.getElementById("clear").innerHTML = "AC";
+  }
+
+  function percent() {
+    equation = eval(equation) + " / 100 * ";
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+
+  function right_perentheses() {
+    equation = equation.concat(") ");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+
+  function left_perentheses() {
+    equation = equation.concat("(");
+    document.getElementById("output").innerHTML = equation;
+    document.getElementById("clear").innerHTML = "CE";
+  }
+
+function Clear() {
+  document.getElementById("output").innerHTML = "";
+  equation = "";
+  document.getElementById("clear").innerHTML = "CE";
+}
+  </script>
+</html>
