@@ -76,117 +76,153 @@ label {
   </style>
   <script>
     var equation = "";
-  
-  function value0() {
-    equation = equation.concat("0");
+var clicked = "";
+var thing = "";
+var store = "";
+var value = "";
+var b = "";
+var c = "";
+var d = "";
+
+function value0() {
+  equation = equation.concat("0");
+  equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   
   function value1() {
     equation = equation.concat("1");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   
   function value2() {
     equation = equation.concat("2");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   
   function value3() {
     equation = equation.concat("3");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   
   function value4() {
     equation = equation.concat("4");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   
   function value5() {
     equation = equation.concat("5");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   
   function value6() {
     equation = equation.concat("6");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   
   function value7() {
     equation = equation.concat("7");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   
   function value8() {
     equation = equation.concat("8");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
 
   function value9() {
     equation = equation.concat("9");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   
   function divide() {
     equation = equation.concat(" / ");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   function multiply() {
     equation = equation.concat(" * ");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   
   function add() {
     equation = equation.concat(" + ");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
   
   function subtract() {
     equation = equation.concat(" - ");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
 
   function dot() {
     equation = equation.concat(".");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
-  
-  function equal() {
-    document.getElementById("output").innerHTML = equation + " = " + eval(equation);
-    document.getElementById("clear").innerHTML = "AC";
-  }
 
   function percent() {
-    equation = eval(equation) + " / 100 * ";
-    document.getElementById("output").innerHTML = equation;
+    equation = equation.concat("% of ")
+    if(clicked == "Yes") {
+      thing = document.getElementById("output").innerHTML;
+      equation = thing.concat("% of ")
+      document.getElementById("output").innerHTML = equation;
+    } else {
+      document.getElementById("output").innerHTML = equation;
+    };
+
     document.getElementById("clear").innerHTML = "CE";
   }
 
   function right_perentheses() {
     equation = equation.concat(") ");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
   }
 
   function left_perentheses() {
     equation = equation.concat("(");
+    equation = equation.replace('/ 100 * ', '% of ');
     document.getElementById("output").innerHTML = equation;
     document.getElementById("clear").innerHTML = "CE";
+  }
+
+  function equal() {
+    clicked = "Yes";
+    var b = equation.indexOf('=');
+var c = equation.substring(0, b + 1);
+var d = equation.replace(c, "");
+var answer = d.replace("% of ", " / 100 * ");
+    document.getElementById("output").innerHTML = equation + " = " + eval(answer);
+    document.getElementById("clear").innerHTML = "AC";
   }
 
 function Clear() {
