@@ -217,11 +217,11 @@ function value0() {
 
   function equal() {
     clicked = "Yes";
-    var b = equation.indexOf('=');
-var c = equation.substring(0, b + 1);
-var d = equation.replace(c, "");
-var answer = d.replace("% of ", " / 100 * ");
-    document.getElementById("output").innerHTML = equation + " = " + eval(answer);
+    b = equation.indexOf('=');
+c = equation.substring(0, b + 1);
+d = equation.replace(c, "");
+answer = d.replace("% of ", " / 100 * ");
+    document.getElementById("output").innerHTML = d + " = " + eval(answer);
     document.getElementById("clear").innerHTML = "AC";
   }
 
